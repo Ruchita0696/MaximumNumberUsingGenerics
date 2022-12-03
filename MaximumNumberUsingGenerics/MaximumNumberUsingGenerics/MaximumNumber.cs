@@ -33,7 +33,7 @@ namespace MaximumNumberUsingGenerics
             return Number3;
         }
 
-        internal static float MaximumfloatIntegerNumber(float Number1, float Number2, float Number3)
+        public static float MaximumfloatIntegerNumber(float Number1, float Number2, float Number3)
         {
             if (Number1.CompareTo(Number2) > 0 && Number1.CompareTo(Number3) > 0 ||
                Number1.CompareTo(Number2) >= 0 && Number1.CompareTo(Number3) > 0 ||
@@ -54,6 +54,29 @@ namespace MaximumNumberUsingGenerics
                 return Number3;
             }
             return Number1;
+        }
+        public static string MaximumstringNumber(string String1, string String2, string String3)
+        {
+            if (String1.CompareTo(String2) > 0 && String1.CompareTo(String3) > 0 ||
+                String1.CompareTo(String2) >= 0 && String1.CompareTo(String3) > 0 ||
+                String1.CompareTo(String2) > 0 && String1.CompareTo(String3) >= 0)
+            {
+                return String1;
+            }
+            if (String2.CompareTo(String1) > 0 && String2.CompareTo(String3) > 0 ||
+                String2.CompareTo(String1) >= 0 && String2.CompareTo(String3) > 0 ||
+                String2.CompareTo(String1) > 0 && String2.CompareTo(String3) >= 0)
+            {
+                return String2;
+            }
+            if (String3.CompareTo(String1) > 0 && String3.CompareTo(String2) > 0 ||
+                String3.CompareTo(String1) >= 0 && String3.CompareTo(String2) > 0 ||
+                String3.CompareTo(String1) > 0 && String3.CompareTo(String2) >= 0)
+            {
+                return String3;
+            }
+            return String1;
+
         }
     }
 }
