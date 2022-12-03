@@ -6,11 +6,19 @@ using System.Threading.Tasks;
 
 namespace MaximumNumberUsingGenerics
 {
-    public static class MaximumNumber
+    public class MaximumNumber<M> where M : IComparable
     {
-
-        public static M MaxNumber<M>(M value1, M value2, M value3) where M : IComparable
+        public M value1, value2, value3;
+        public MaximumNumber(M value1, M value2, M value3)
         {
+            this.value1 = value1;
+            this.value2 = value2;
+            this.value3 = value3;
+        }
+
+
+         public static M MaxNumber<M>(M value1, M value2, M value3) where M : IComparable
+         {
             if (value1.CompareTo(value2) > 0 && value1.CompareTo(value3) > 0 ||
                 value1.CompareTo(value2) >= 0 && value1.CompareTo(value3) > 0 ||
                 value1.CompareTo(value2) > 0 && value1.CompareTo(value3) >= 0)
@@ -30,6 +38,11 @@ namespace MaximumNumberUsingGenerics
                 return value3;
             }
             return value1;
+         }
+        public M MaxMethod()
+        {
+            M Max = MaximumNumber<M>.MaxNumber(this.value1, this.value2, this.value3);
+            return Max;
         }
         public static int MaximumIntegerNumber(int Number1, int Number2, int Number3)
         {
