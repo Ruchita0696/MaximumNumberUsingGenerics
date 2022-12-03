@@ -9,10 +9,31 @@ namespace MaximumNumberUsingGenerics
     public static class MaximumNumber
     {
 
+        public static M MaxNumber<M>(M value1, M value2, M value3) where M : IComparable
+        {
+            if (value1.CompareTo(value2) > 0 && value1.CompareTo(value3) > 0 ||
+                value1.CompareTo(value2) >= 0 && value1.CompareTo(value3) > 0 ||
+                value1.CompareTo(value2) > 0 && value1.CompareTo(value3) >= 0)
+            {
+                return value1;
+            }
+            if (value2.CompareTo(value1) > 0 && value2.CompareTo(value3) > 0 ||
+                value2.CompareTo(value1) >= 0 && value2.CompareTo(value3) > 0 ||
+                value2.CompareTo(value1) > 0 && value2.CompareTo(value3) >= 0)
+            {
+                return value2;
+            }
+            if (value3.CompareTo(value1) > 0 && value3.CompareTo(value2) > 0 ||
+                value3.CompareTo(value1) >= 0 && value3.CompareTo(value2) > 0 ||
+                value3.CompareTo(value1) > 0 && value3.CompareTo(value2) >= 0)
+            {
+                return value3;
+            }
+            return value1;
+        }
         public static int MaximumIntegerNumber(int Number1, int Number2, int Number3)
         {
-            if
-                (Number1.CompareTo(Number2) > 0 && Number1.CompareTo(Number3) > 0 ||
+            if (Number1.CompareTo(Number2) > 0 && Number1.CompareTo(Number3) > 0 ||
                 Number1.CompareTo(Number2) >= 0 && Number1.CompareTo(Number3) > 0 ||
                 Number1.CompareTo(Number2) > 0 && Number1.CompareTo(Number3) >= 0)
             {
@@ -30,7 +51,7 @@ namespace MaximumNumberUsingGenerics
             {
                 return Number3;
             }
-            return Number3;
+            return Number1;
         }
 
         public static float MaximumfloatIntegerNumber(float Number1, float Number2, float Number3)
