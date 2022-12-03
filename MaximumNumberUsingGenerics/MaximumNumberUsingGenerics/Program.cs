@@ -1,10 +1,11 @@
 ﻿namespace MaximumNumberUsingGenerics
 {
-    internal class Program
+    public class Program
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine("Maximum Number is : " + MaximumNumber.MaximumIntegerNumber(5, 20, 10));
         }
     }
+
 }
