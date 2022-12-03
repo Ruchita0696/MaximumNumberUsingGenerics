@@ -30,7 +30,7 @@ namespace MaximumNumberUsingGenerics
             {
                 return Number3;
             }
-            return Number2;
+            return Number3;
         }
     }
 }

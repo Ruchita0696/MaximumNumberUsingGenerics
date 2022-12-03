@@ -4,7 +4,7 @@
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Maximum Number is : " + MaximumNumber.MaximumIntegerNumber(20, 30, 10));
+            Console.WriteLine("Maximum Number is : " + MaximumNumber.MaximumIntegerNumber(10, 20, 30));
         }
     }
 
