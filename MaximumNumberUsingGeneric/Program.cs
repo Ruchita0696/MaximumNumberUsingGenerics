@@ -1,4 +1,4 @@
-﻿namespace MaximumNumberUsingGenerics
+﻿namespace MaximumNumberUsingGeneric
 {
     internal class Program
     {
@@ -10,6 +10,6 @@
             Console.WriteLine("Maximum Float Number is : " + MaximumNumber.MaxNumber<float>(30, 20, 10));
             Console.WriteLine("Maximum String Number is : " + MaximumNumber.MaxNumber("44", "30", "10"));
         }
+
     }
-    
 }
