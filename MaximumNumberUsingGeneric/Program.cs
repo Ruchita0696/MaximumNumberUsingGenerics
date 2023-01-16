@@ -8,6 +8,7 @@ namespace MaximumNumberUsingGeneric
         {
             Console.WriteLine("Maximum Number is : " + MaximumNumber.MaximumIntegerNumber(20, 10, 30));
             Console.WriteLine("Maximum Number is : " + MaximumNumber.MaximumfloatNumber(20.10f, 10.50f, 30.68f));
+            Console.WriteLine("Maximum Number is : " + MaximumNumber.MaximumstringNumber("Apple", "Peach", "Banana"));
         }
 
     }
