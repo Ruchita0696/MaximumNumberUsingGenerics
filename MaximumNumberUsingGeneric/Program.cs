@@ -6,7 +6,7 @@ namespace MaximumNumberUsingGeneric
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Maximum String is : " + MaximumNumber.MaximumstringNumber("Apple", "Peach", "Banana"));
+            Console.WriteLine("Maximum Number is : " + MaximumNumber.MaximumIntegerNumber(5, 20, 10));
         }
 
     }
