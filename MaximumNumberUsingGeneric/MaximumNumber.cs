@@ -28,7 +28,7 @@ namespace MaximumNumberUsingGeneric
             {
                 return Number3;
             }
-            return Number1;
+            return Number2;
         }
 
     }
