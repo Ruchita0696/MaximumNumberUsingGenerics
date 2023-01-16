@@ -8,7 +8,7 @@ namespace MaximumNumberUsingGeneric
 {
     public class MaximumNumber
     {
-        public static float MaximumfloategerNumber(float Number1, float Number2, float Number3)
+        public static String MaximumstringNumber(string Number1, string Number2, string Number3)
         {
             if (Number1.CompareTo(Number2) > 0 && Number1.CompareTo(Number3) > 0 ||
                 Number1.CompareTo(Number2) >= 0 && Number1.CompareTo(Number3) > 0 ||
@@ -28,7 +28,7 @@ namespace MaximumNumberUsingGeneric
             {
                 return Number3;
             }
-            return Number3;
+            return Number1;
         }
 
     }
