@@ -13,6 +13,9 @@ namespace MaximumNumberUsingGeneric
             Console.WriteLine("Maximum Number is : " + maximumFloat.MaxMethod());
             MaximumNumber<string> maximumString = new MaximumNumber<string>("20", "30", "40", "10");
             Console.WriteLine("Maximum Number is : " + maximumString.MaxMethod());
+            int[] arr = { 112, 344, 432, 555, 678 };
+            MaximumNumberUsingMaxMethod<int> maxMethod = new MaximumNumberUsingMaxMethod<int>(arr);
+            maxMethod.PrintMaxValue();
         }
     }
 }
