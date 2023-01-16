@@ -6,8 +6,53 @@ using System.Threading.Tasks;
 
 namespace MaximumNumberUsingGeneric
 {
-    public class MaximumNumber
+    public class MaximumNumber<M> where M : IComparable
     {
+        public M value1, value2, value3, value4;
+        public MaximumNumber(M value1, M value2, M value3, M value4)
+        {
+            this.value1 = value1;
+            this.value2 = value2;
+            this.value3 = value3;
+            this.value4 = value4;
+        }
+        public static M MaxNumber<M>(M value1, M value2, M value3, M value4) where M : IComparable
+        {
+            if (value1.CompareTo(value2) > 0 && value1.CompareTo(value3) > 0 && value1.CompareTo(value4) > 0 ||
+                value1.CompareTo(value2) >= 0 && value1.CompareTo(value3) > 0 && value1.CompareTo(value4) > 0 ||
+                value1.CompareTo(value2) > 0 && value1.CompareTo(value3) >= 0 && value1.CompareTo(value4) > 0 ||
+                value1.CompareTo(value2) > 0 && value1.CompareTo(value3) > 0 && value1.CompareTo(value4) >= 0)
+            {
+                return value1;
+            }
+            if (value2.CompareTo(value1) > 0 && value2.CompareTo(value3) > 0 && value2.CompareTo(value4) > 0 ||
+                           value2.CompareTo(value1) >= 0 && value2.CompareTo(value3) > 0 && value2.CompareTo(value4) > 0 ||
+                           value2.CompareTo(value1) > 0 && value2.CompareTo(value3) >= 0 && value2.CompareTo(value4) > 0 ||
+                           value2.CompareTo(value1) > 0 && value2.CompareTo(value3) > 0 && value2.CompareTo(value4) >= 0)
+            {
+                return value2;
+            }
+            if (value3.CompareTo(value1) > 0 && value3.CompareTo(value2) > 0 && value3.CompareTo(value4) > 0 ||
+                value3.CompareTo(value1) >= 0 && value3.CompareTo(value2) > 0 && value3.CompareTo(value4) > 0 ||
+                value3.CompareTo(value1) > 0 && value3.CompareTo(value2) >= 0 && value3.CompareTo(value4) > 0 ||
+                value3.CompareTo(value1) > 0 && value3.CompareTo(value2) > 0 && value3.CompareTo(value4) >= 0)
+            {
+                return value3;
+            }
+            if (value4.CompareTo(value1) > 0 && value4.CompareTo(value2) > 0 && value4.CompareTo(value3) > 0 ||
+                value4.CompareTo(value1) >= 0 && value4.CompareTo(value2) > 0 && value4.CompareTo(value3) > 0 ||
+                value4.CompareTo(value1) > 0 && value4.CompareTo(value2) >= 0 && value4.CompareTo(value3) > 0 ||
+                value4.CompareTo(value1) > 0 && value4.CompareTo(value2) > 0 && value4.CompareTo(value3) >= 0)
+            {
+                return value4;
+            }
+            return default;
+        }
+        public M MaxMethod()
+        {
+            M Max = MaximumNumber<M>.MaxNumber(this.value1, this.value2, this.value3, this.value4);
+            return Max;
+        }
         public static int MaximumIntegerNumber(int Number1, int Number2, int Number3)
         {
             if (Number1.CompareTo(Number2) > 0 && Number1.CompareTo(Number3) > 0 ||
@@ -23,12 +68,12 @@ namespace MaximumNumberUsingGeneric
                 return Number2;
             }
             if (Number3.CompareTo(Number1) > 0 && Number3.CompareTo(Number2) > 0 ||
-                Number3.CompareTo(Number1) >= 0 && Number3.CompareTo(Number2) > 0 ||
-                Number3.CompareTo(Number1) > 0 && Number3.CompareTo(Number2) >= 0)
+               Number3.CompareTo(Number1) >= 0 && Number3.CompareTo(Number2) > 0 ||
+               Number3.CompareTo(Number1) > 0 && Number3.CompareTo(Number2) >= 0)
             {
                 return Number3;
             }
-            return Number3;
+            return Number1;
         }
         public static float MaximumfloatNumber(float Number1, float Number2, float Number3)
         {
@@ -74,6 +119,5 @@ namespace MaximumNumberUsingGeneric
             }
             return String1;
         }
-
     }
 }
